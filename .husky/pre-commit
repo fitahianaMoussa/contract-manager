@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx git-precommit-checks
+npx lint-staged
+# npx validate-branch-name

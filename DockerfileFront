@@ -1,0 +1,15 @@
+From node:lts-alpine
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm cache clean --force && \
+    npm install -g npm@latest && \
+    npm install
+
+EXPOSE 5173
+
+COPY . /app
+
+CMD ["npm", "run", "front:dev", "--host"]
